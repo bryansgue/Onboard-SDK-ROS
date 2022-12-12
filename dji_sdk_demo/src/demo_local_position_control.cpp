@@ -73,7 +73,7 @@ int main(int argc, char** argv)
     initData.linear.x=0;
     initData.linear.y=0;
     initData.linear.z=0;
-    initData.angular.x=0;
+    initData.angular.z=0;
     initPub.publish(initData);
 
   if(is_M100())
@@ -144,7 +144,7 @@ void local_position_callback(const geometry_msgs::PointStamped::ConstPtr& msg) {
         controllerPC.axes.push_back(control_velocity.linear.x);
         controllerPC.axes.push_back(control_velocity.linear.y);
         controllerPC.axes.push_back(control_velocity.linear.z);
-        controllerPC.axes.push_back(control_velocity.angular.x);
+        controllerPC.axes.push_back(control_velocity.angular.z);
         controllerPC.axes.push_back(flag);
         controlPub.publish(controllerPC);  
 
